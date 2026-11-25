@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>X Prospect Research</title>
+</head>
+<body>
+<script>
+/* FAKE example data: no real people, accounts or posts. A real report has the same shape. */
+window.DATA = {
+  product: "Example App",
+  date: "2026-11-25",                        // date of the search, YYYY-MM-DD
+  windowDays: 60,
+  title: "Who to talk to first on X",
+  lede: {                                     // the key phrase gets the highlighter
+    before: "We read the replies under four tools in our space. The people answering are mostly",
+    key: "solo founders who share their progress in public.",
+    after: "They already grow by replying on X, and they struggle to keep it up without losing hours to the feed."
+  },
+  storyTitle: "Who answers our competitors",
+  // Fig. 1. "sample" = engagements (replies, quotes, reposts) sampled per source.
+  sources: [
+    { name: "Tool A", account: "@founder_tool_a", url: "https://example.com/x/founder_tool_a", followers: "~18k", sample: 34 },
+    { name: "Tool B", account: "@tool_b_app",     url: "https://example.com/x/tool_b_app",     followers: "~41k", sample: 31 },
+    { name: "Tool C", account: "@founder_tool_c", url: "https://example.com/x/founder_tool_c", followers: "~9k",  sample: 22 },
+    { name: "Tool D", account: "@tool_d_hq",      url: "https://example.com/x/tool_d_hq",      followers: "~26k", sample: 15 },
+    { name: "Builders", account: "Audience overlap", url: "", followers: "–", sample: 10, plus: true }
+  ],
+  uniquePeople: 88,                           // after removing people found under more than one source
+  roles: [                                    // shares in %, biggest first; 2 to 5 groups
+    { name: "Founders and solo devs", pct: 58 },
+    { name: "Engineers with side projects", pct: 22 },
+    { name: "Marketers and growth", pct: 12 },
+    { name: "Creators, agencies", pct: 8 }
+  ],
+  activity: [                                 // last post; shares in %
+    { name: "Posted in last 7 days", pct: 71 },
+    { name: "Last 30 days", pct: 21 },
+    { name: "Older", pct: 8 }
+  ],
+  followerRange: [200, 8000],                 // typical range across the sample
+  steps: [                                    // one per Fig. 1 state, in this order
+    { h: "112 engagements under five sources", p: "Replies, quotes and reposts on recent posts by four tools in our space, plus builders with an overlapping audience." },
+    { h: "Repeats removed: 88 people", p: "Some people engaged with more than one account. Counted once each, that leaves 88 profiles." },
+    { h: "Most are founders", p: "About 58% are founders or solo devs, mostly in SaaS and developer tools, ≈ pre-revenue to low five-figure MRR." },
+    { h: "Engineers next, then growth people", p: "About 22% are engineers with side projects, 12% marketers, 8% creators and agencies. ≈ Mostly Europe and North America." },
+    { h: "Seven in ten posted this week", p: "About 71% posted in the last 7 days, 21% in the last 30. Most have under 8k followers." }
+  ],
+  topics: [                                   // top 8, most common first; "match" = words to find in a prospect's bio and topics
+    { label: "Building in public", match: ["in public"] },
+    { label: "Shipping SaaS products", match: ["saas", "shipping"] },
+    { label: "Growing on X", match: ["growth", "grow"] },
+    { label: "AI coding tools", match: ["ai", "coding"] },
+    { label: "Pricing and first customers", match: ["pricing", "customers"] },
+    { label: "MRR and revenue updates", match: ["mrr", "revenue"] },
+    { label: "The indie hacking journey", match: ["indie"] },
+    { label: "Marketing and distribution", match: ["marketing", "distribution"] }
+  ],
+  reads: [
+    { k: "Founders", v: "Other build-in-public founders they quote" },
+    { k: "Sites", v: "Indie Hackers, founder blogs" },
+    { k: "Tools", v: "AI coding assistants, X scheduling tools" },
+    { k: "Shows", v: "Growth and indie hacker podcasts" }
+  ],
+  findingsTitle: "What this means for Example App",
+  findings: [
+    { h: "They already reply by hand", p: "Many already use replies to grow and feel the pull between building and staying visible." },
+    { h: "Talk in their threads, don't pitch", p: "The audience is other builders. The way in is real conversation under their progress posts." },
+    { h: "Early stage, protective of focus", p: "They want tools that guard focus time and keep engagement their own." }
+  ],
+  // Shortlist, ranked by fit. Fake people; links point to example.com.
+  prospects: [
+    { handle: "maya_ships", name: "Maya R.", followers: 1240, last: "2026-11-25", bio: "Solo founder shipping a habit tracker in public", topics: "Building in public, SaaS, habits", source: "Tool A", proof: "Reply to Tool A's founder", proofUrl: "https://example.com/post/1", why: "Posts daily updates; wants replies without the feed" },
+    { handle: "devon_builds", name: "Devon K.", followers: 860, last: "2026-11-24", bio: "Engineer building a SaaS for dentists on weekends", topics: "SaaS, side projects, shipping", source: "Tool B", proof: "Quote of a Tool B post", proofUrl: "https://example.com/post/2", why: "Side-project builder with little time for X" },
+    { handle: "priya_indie", name: "Priya S.", followers: 3100, last: "2026-11-25", bio: "Indie hacker, two small apps, $2k MRR", topics: "Indie, MRR, pricing", source: "Tool A", proof: "Reply to Tool A's founder", proofUrl: "https://example.com/post/3", why: "Shares MRR openly; growing through replies" },
+    { handle: "tomas_makes", name: "Tomás L.", followers: 420, last: "2026-11-23", bio: "Building an AI notes app in public, day 41", topics: "AI, building in public", source: "Tool C", proof: "Reply in a Tool C thread", proofUrl: "https://example.com/post/4", why: "Early, consistent poster who wants a habit" },
+    { handle: "lena_growth", name: "Lena W.", followers: 5600, last: "2026-11-25", bio: "Growth lead turned founder, tools for newsletters", topics: "Marketing, growth, distribution", source: "Tool B", proof: "Reply to Tool B", proofUrl: "https://example.com/post/5", why: "Knows engagement is worth it; short on time" },
+    { handle: "sam_codes_late", name: "Sam O.", followers: 310, last: "2026-11-22", bio: "Night-shift dev shipping a Chrome extension", topics: "Shipping, AI coding", source: "Tool D", proof: "Repost with comment", proofUrl: "https://example.com/post/6", why: "New to X; wants a simple daily routine" },
+    { handle: "aiko_launches", name: "Aiko M.", followers: 2050, last: "2026-11-25", bio: "Launching her third micro-SaaS this month", topics: "SaaS, launches, first customers", source: "Tool C", proof: "Reply to Tool C's founder", proofUrl: "https://example.com/post/7", why: "Serial launcher who needs steady visibility" },
+    { handle: "noah_bootstraps", name: "Noah P.", followers: 1480, last: "2026-11-24", bio: "Bootstrapping an invoicing tool, ex-agency", topics: "Bootstrapping, pricing, revenue", source: "Tool A", proof: "Reply to Tool A's founder", proofUrl: "https://example.com/post/8", why: "Ex-agency; values relationships over reach" },
+    { handle: "rita_designs", name: "Rita F.", followers: 6900, last: "2026-11-21", bio: "Designer building UI kits for indie founders", topics: "Design, indie, community", source: "Builders", proof: "Post on building in public", proofUrl: "https://example.com/post/9", why: "Her buyers are founders she talks to on X" },
+    { handle: "ben_tinkers", name: "Ben A.", followers: 540, last: "2026-11-25", bio: "Student founder, AI study app, 120 users", topics: "AI, students, growth", source: "Tool B", proof: "Reply to Tool B", proofUrl: "https://example.com/post/10", why: "Very active; needs a system, not more scrolling" },
+    { handle: "clara_ops", name: "Clara N.", followers: 2700, last: "2026-11-20", bio: "Ops consultant shipping a tiny SaaS on the side", topics: "SaaS, operations, shipping", source: "Tool D", proof: "Reply in a Tool D thread", proofUrl: "https://example.com/post/11", why: "Busy consultant; replies in short bursts" },
+    { handle: "omar_in_public", name: "Omar H.", followers: 11800, last: "2026-11-25", bio: "Writing about building a calm SaaS company", topics: "Building in public, SaaS, focus", source: "Builders", proof: "Build-in-public post", proofUrl: "https://example.com/post/12", why: "Larger account who cares about focus time" }
+  ],
+  method: [
+    "Live X searches for replies, quotes and reposts on competitor posts from the last 60 days. This covers the engaged audience, not full follower lists.",
+    "112 engagements, 88 unique people. Post dates are exact; values marked ≈ are inferred from bios. Every handle was checked at search time. The target was 20 prospects; 12 met every rule."
+  ]
+};
+</script>
+<script src="https://cdn.jsdelivr.net/gh/heymoot/founder-tools@main/x-prospect-research/report.js"></script>
+</body>
+</html>

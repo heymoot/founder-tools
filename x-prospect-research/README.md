@@ -1,6 +1,6 @@
 # X Prospect Research: find customers in your competitors' audience on X
 
-A free AI prompt and HTML template that turns your competitors' X (Twitter) audience into a short list of people worth talking to. Made by [heymoot](https://heymoot.com).
+A free Grok prompt and report design that turns your competitors' X (Twitter) audience into a short list of people worth talking to. Made by [heymoot](https://heymoot.com).
 
 ![The report's opening: who to talk to first on X](preview-top.png)
 
@@ -17,13 +17,13 @@ One page you open in your browser, built from a live search of X:
 
 ![The shortlist with follower chart, filters and checkboxes](preview-list.png)
 
-The template in this folder holds **fake example data**. None of the people or accounts are real, and its links go to example.com.
+[`example.html`](example.html) is a report with **fake example data**. None of the people or accounts are real, and its links go to example.com.
 
 ## How to use it
 
 1. Open [Grok](https://grok.com). It's the assistant that can search X live, which this tool needs.
-2. Copy the prompt from [`prompt.md`](prompt.md), replace `[your website]`, and send it. The prompt links to [`template.html`](template.html), so there's nothing to attach.
-3. Save the HTML Grok returns as a file and open it in your browser.
+2. Copy the prompt from [`prompt.md`](prompt.md), replace `[your website]`, and send it.
+3. Save the HTML Grok returns as `report.html` and open it in your browser. It needs an internet connection to load the design.
 
 ## Why the engaged audience
 
@@ -35,7 +35,7 @@ Grok can still get things wrong. Open each profile before you reach out: the pro
 
 ## Customize
 
-Everything on the page renders from one `DATA` object at the bottom of `template.html`. Change the data and leave the rest alone. The fonts load from Google Fonts. Without a connection the page falls back to system fonts and still works.
+Grok writes only the data (`window.DATA`). The design lives in [`report.js`](report.js), which every report loads from jsDelivr, so Grok can't break the layout. To change a report, edit its data. To change the design, fork the repo and point the script tag at your copy of `report.js`.
 
 ---
 

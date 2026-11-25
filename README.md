@@ -17,10 +17,10 @@ More tools for building product and growing your business are on the way.
 ## How the tools work
 
 - **Paste a prompt.** Each tool is a prompt for an AI assistant. Its README says which assistant it needs and why.
-- **Templates hold the design.** Each prompt links to its template, and the AI fills in only the data, so the result looks the same every time.
+- **The design is built in.** The AI writes only your data, and the page design loads from this repo, so the result looks the same every time.
 - **Open in a browser.** Each result is one HTML file. Nothing to install and no account needed.
 
-Every tool folder has a README, the prompt, the template, and example output with fake data.
+Every tool folder has a README, the prompt, the page design, and an example with fake data.
 
 ## About heymoot
 
