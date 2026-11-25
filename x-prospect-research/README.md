@@ -21,12 +21,9 @@ The template in this folder holds **fake example data**. None of the people or a
 
 ## How to use it
 
-1. Open an AI assistant that can search X live, such as Grok, or ChatGPT or Claude with web search.
-2. Attach [`template.html`](template.html).
-3. Copy **Prompt A** from [`prompt.md`](prompt.md), replace `[your website]`, and send it.
-4. Save the HTML it returns as a file and open it in your browser.
-
-No file attachments in your assistant? Use **Prompt B** in [`prompt.md`](prompt.md). It describes the same design in words.
+1. Open [Grok](https://grok.com). It's the assistant that can search X live, which this tool needs.
+2. Copy the prompt from [`prompt.md`](prompt.md), replace `[your website]`, and send it. The prompt links to [`template.html`](template.html), so there's nothing to attach.
+3. Save the HTML Grok returns as a file and open it in your browser.
 
 ## Why the engaged audience
 
@@ -34,7 +31,7 @@ X follower lists can't be searched, and most followers are inactive. People who 
 
 ## Check before you trust it
 
-AI search can still get things wrong. Open each profile before you reach out: the prompt asks for checked handles and real post links, but a quick look takes a minute and saves an awkward reply.
+Grok can still get things wrong. Open each profile before you reach out: the prompt asks for checked handles and real post links, but a quick look takes a minute and saves an awkward reply.
 
 ## Customize
 

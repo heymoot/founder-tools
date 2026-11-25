@@ -10,12 +10,12 @@ Free AI prompts and templates for growing on X (Twitter) by talking to the right
 |---|---|
 | [X Prospect Research](x-prospect-research/) | Finds potential customers in your competitors' engaged audience on X and turns them into an interactive report with a shortlist to check by hand. |
 
-Each tool has its own folder with a prompt you paste into an AI assistant, a template, and example output with fake data.
+Each tool has its own folder with a prompt you paste into Grok, a template, and example output with fake data.
 
 ## How the tools work
 
-- **Bring your own AI.** Paste the prompt into Grok, ChatGPT, Claude or any assistant that can search X live.
-- **Templates hold the design.** The AI fills in the data, so the result looks the same every time.
+- **Runs in Grok.** Grok can search X live, so you paste the prompt there. Nothing else to set up.
+- **Templates hold the design.** Each prompt links to its template, and Grok fills in only the data, so the result looks the same every time.
 - **Open in a browser.** Each result is one HTML file. Nothing to install and no account needed.
 
 ## About heymoot
