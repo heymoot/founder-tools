@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>heymoot-free-tools social preview</title>
+<!-- Source for social-preview.png (1280x640). Screenshot this page at exactly 1280x640. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@600;800&family=Source+Serif+4:opsz,wght@8..60,400&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root { --paper: #ffffff; --wash: #f2f3f6; --ink: #0b0d12; --ink-2: #353a46; --muted: #626877; --rule: #d8dbe2; --signal: #2438ff; --hl: #fff27a; --g4: #c4c9d3; }
+* { box-sizing: border-box; }
+html, body { margin: 0; width: 1280px; height: 640px; overflow: hidden; background: var(--paper); color: var(--ink); -webkit-font-smoothing: antialiased; }
+.card { position: relative; width: 1280px; height: 640px; padding: 64px 72px 0; display: grid; grid-template-columns: 640px 1fr; gap: 40px; }
+.top { position: absolute; left: 72px; right: 72px; top: 34px; display: flex; justify-content: space-between; font: 500 15px "JetBrains Mono", monospace; color: var(--muted); }
+.copy { display: flex; flex-direction: column; justify-content: center; gap: 28px; padding-bottom: 72px; }
+h1 { margin: 0; font: 800 96px/0.92 "Schibsted Grotesk", Arial, sans-serif; letter-spacing: -0.045em; }
+h1 .hl { background: linear-gradient(transparent 62%, var(--hl) 62%); }
+p { margin: 0; font: 400 30px/1.3 "Source Serif 4", Georgia, serif; color: var(--ink-2); max-width: 21ch; letter-spacing: -0.01em; }
+.fig { position: relative; align-self: center; height: 420px; margin-bottom: 56px; border-bottom: 2px solid var(--ink); }
+.col { position: absolute; bottom: 14px; display: grid; grid-template-columns: repeat(3, 22px); gap: 8px; align-content: end; }
+.col i { width: 22px; height: 22px; border-radius: 50%; background: var(--g4); display: block; }
+.col.on i { background: var(--signal); }
+.lbl { position: absolute; bottom: -34px; font: 400 14px "JetBrains Mono", monospace; color: var(--muted); }
+.lbl.on { color: var(--signal); font-weight: 500; }
+.foot { position: absolute; left: 72px; right: 72px; bottom: 30px; display: flex; justify-content: space-between; font: 500 17px "JetBrains Mono", monospace; color: var(--ink); border-top: 1px solid var(--rule); padding-top: 14px; }
+.foot span:last-child { color: var(--muted); font-weight: 400; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="top"><span>heymoot-free-tools</span><span>MIT · free</span></div>
+  <div class="copy">
+    <h1>Free tools for growing on <span class="hl">X</span></h1>
+    <p>Prompts and templates to find the people worth talking to.</p>
+  </div>
+  <div class="fig" id="fig"></div>
+  <div class="foot"><span>heymoot.com</span><span>github.com/trunghq3101/heymoot-free-tools</span></div>
+</div>
+<script>
+const counts = [24, 33, 18, 12, 21], fig = document.getElementById("fig"), labels = ["A", "B", "C", "D", "E"];
+counts.forEach((n, i) => {
+  const left = 8 + i * 96, on = i === 1;
+  fig.insertAdjacentHTML("beforeend", `<div class="col${on ? " on" : ""}" style="left:${left}px">${"<i></i>".repeat(n)}</div><span class="lbl${on ? " on" : ""}" style="left:${left + 28}px">${labels[i]}</span>`);
+});
+</script>
+</body>
+</html>
