@@ -2,7 +2,7 @@
 
 Paste this into [Grok](https://grok.com). It needs Grok because Grok is the assistant that can search X live. Replace `[your website]` first.
 
-Grok fetches the page design from [`template.html`](https://raw.githubusercontent.com/trunghq3101/heymoot-free-tools/main/x-prospect-research/template.html) in this repo and fills in only the data, so the report looks the same every time. If Grok says it can't open the link, download `template.html`, attach it to the chat, and change the first line of the Output section to "Use the attached template.html as the exact template."
+Grok fetches the page design from [`template.html`](https://raw.githubusercontent.com/heymoot/founder-tools/main/x-prospect-research/template.html) in this repo and fills in only the data, so the report looks the same every time. If Grok says it can't open the link, download `template.html`, attach it to the chat, and change the first line of the Output section to "Use the attached template.html as the exact template."
 
 
 ````
@@ -36,7 +36,7 @@ Rules
 
 ## Output
 
-Fetch the template at https://raw.githubusercontent.com/trunghq3101/heymoot-free-tools/main/x-prospect-research/template.html and use it as the exact template. Return the whole file with ONLY the `DATA` object changed; keep every style, element and script as it is.
+Fetch the template at https://raw.githubusercontent.com/heymoot/founder-tools/main/x-prospect-research/template.html and use it as the exact template. Return the whole file with ONLY the `DATA` object changed; keep every style, element and script as it is.
 - Replace all example data. Don't keep any example.com links: post links are real X post URLs.
 - `sources`: the 4 competitors plus "Builders" (set `plus: true` when the count is a lower bound). `sample` = engagements for that source.
 - `uniquePeople`, `roles`, `activity`, `followerRange` from Step 2 and 3. Shares are whole numbers that add up to 100.

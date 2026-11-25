@@ -39,4 +39,4 @@ Everything on the page renders from one `DATA` object at the bottom of `template
 
 ---
 
-Built by [heymoot](https://heymoot.com), which helps founders grow on X by talking to the right people every day, in their own words. More free tools: [heymoot-free-tools](../README.md).
+Built by [heymoot](https://heymoot.com), which helps founders grow on X by talking to the right people every day, in their own words. More free tools for founders: [heymoot/founder-tools](../README.md).
